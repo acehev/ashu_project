@@ -9,11 +9,18 @@ const {
   deleteJob,
 } = require("../controllers/jobController");
 
-const protect = require("../middleware/authMiddleware");
+const {
+  protect,
+  isRecruiter,
+} = require("../middleware/authMiddleware");
 
+// Public Routes
 router.get("/", getAllJobs);
 router.get("/:id", getJobById);
-router.post("/", protect, createJob);
-router.put("/:id", protect, updateJob);
-router.delete("/:id", protect, deleteJob);
+
+// Recruiter Only Routes
+router.post("/", protect, isRecruiter, createJob);
+router.put("/:id", protect, isRecruiter, updateJob);
+router.delete("/:id", protect, isRecruiter, deleteJob);
+
 module.exports = router;
