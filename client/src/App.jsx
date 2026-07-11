@@ -6,7 +6,7 @@ import Background from "./components/common/Background";
 import MouseGlow from "./components/common/MouseGlow";
 import ViewApplicants from "./pages/ViewApplicants";
 
-import Home from "./pages/Home";
+import Home from "./pages/home";
 import Login from "./pages/login";
 import Register from "./pages/Register";
 import Jobs from "./pages/jobs";
