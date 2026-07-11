@@ -7,9 +7,9 @@ import MouseGlow from "./components/common/MouseGlow";
 import ViewApplicants from "./pages/ViewApplicants";
 
 import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Login from "./pages/login";
 import Register from "./pages/Register";
-import Jobs from "./pages/Jobs";
+import Jobs from "./pages/jobs";
 import JobDetails from "./pages/JobDetails";
 import StudentDashboard from "./pages/StudentDashboard";
 import RecruiterDashboard from "./pages/RecruiterDashboard";
