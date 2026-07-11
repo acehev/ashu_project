@@ -4,11 +4,10 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const userRoutes = require("./routes/userRoutes");
 const connectDB = require("./config/db");
-const dns = require('dns');
+const dns = require("dns");
 const path = require("path");
 const applicationRoutes = require("./routes/applicationRoutes");
-dns.setServers(['1.1.1.1', '8.8.8.8']);
-
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 dotenv.config();
 
@@ -23,8 +22,15 @@ app.use("/api/jobs", jobRoutes);
 app.use("/api/applications", applicationRoutes);
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
+const clientBuildPath = path.join(__dirname, "..", "client", "dist");
+app.use(express.static(clientBuildPath));
+
 app.get("/", (req, res) => {
-  res.send("🚀 Job Portal Backend is Running...");
+  res.sendFile(path.join(clientBuildPath, "index.html"));
+});
+
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.join(clientBuildPath, "index.html"));
 });
 
 const PORT = process.env.PORT || 5000;

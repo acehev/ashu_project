@@ -1,0 +1,27 @@
+{
+  "name": "job-portal-mern",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "homepage": "https://github.com/ashutoshdeepu256-coder/job-portal-mern#readme",
+  "bugs": {
+    "url": "https://github.com/ashutoshdeepu256-coder/job-portal-mern/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashutoshdeepu256-coder/job-portal-mern.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "npm run install:server && npm run install:client",
+    "install:server": "npm --prefix server install",
+    "install:client": "npm --prefix client install",
+    "build": "npm run build:client",
+    "build:client": "npm --prefix client run build",
+    "start": "npm run start:server",
+    "start:server": "npm --prefix server start"
+  }
+}
